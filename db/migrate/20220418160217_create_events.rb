@@ -1,10 +1,10 @@
 class CreateEvents < ActiveRecord::Migration[5.2]
   def change
     create_table :events do |t|
-      t.date :day
-      t.string :location, :image_source, :event_name, :event_description
-      t.integer :event_size, :min_age, :max_age
-      t.boolean :weed, :alcohol, :dj
+      t.date :date
+      t.string :location, :img, :name, :description
+      t.integer :guestAmounts, :ageMin, :ageMax
+      t.boolean :cannabis, :liquor, :dj
       t.belongs_to :user
     end
   end

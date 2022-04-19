@@ -16,58 +16,58 @@ User.create(
 
 Event.create(
     location: Faker::Address.city,
-    event_name: Faker::Marketing.buzzwords,
-    event_description: "lets party till we die or something",
-    event_size: rand(10...100),
-    weed: true,
-    alcohol: true,
+    name: Faker::Marketing.buzzwords,
+    description: "lets party till we die or something",
+    guestAmounts: rand(10...100),
+    cannabis: true,
+    liquor: true,
     dj: true,
     user_id: 3,
-    day: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
-    min_age: 21,
-    max_age: 50
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: 21,
+    ageMax: 50
 )
 
 Event.create(
     location: Faker::Address.city,
-    event_name: Faker::Marketing.buzzwords,
-    event_description: "lets meditate :)",
-    event_size: rand(10...100),
-    weed: true,
-    alcohol: false,
+    name: Faker::Marketing.buzzwords,
+    description: "lets meditate :)",
+    guestAmounts: rand(10...100),
+    cannabis: true,
+    liquor: false,
     dj: true,
     user_id: 2,
-    day: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
-    min_age: 19,
-    max_age: 27
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: 19,
+    ageMax: 27
 )
 
 Event.create(
     location: Faker::Address.city,
-    event_name: Faker::Marketing.buzzwords,
-    event_description: "we might die here",
-    event_size: rand(10...100),
-    weed: false,
-    alcohol: true,
+    name: Faker::Marketing.buzzwords,
+    description: "we might die here",
+    guestAmounts: rand(10...100),
+    cannabis: false,
+    liquor: true,
     dj: true,
     user_id: 3,
-    day: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
-    min_age: 23,
-    max_age: 37
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: 23,
+    ageMax: 37
 )
 
 Event.create(
     location: Faker::Address.city,
-    event_name: Faker::Marketing.buzzwords,
-    event_description: "party hardy!",
-    event_size: rand(10...100),
-    weed: true,
-    alcohol: true,
+    name: Faker::Marketing.buzzwords,
+    description: "party hardy!",
+    guestAmounts: rand(10...100),
+    cannabis: true,
+    liquor: true,
     dj: true,
     user_id: 2,
-    day: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
-    min_age: 23,
-    max_age: 75
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: 23,
+    ageMax: 75
 )
 
 Comment.create(
