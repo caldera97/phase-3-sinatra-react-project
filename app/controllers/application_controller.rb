@@ -11,7 +11,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/Events/:id" do 
-    Event.all.find(id).to_json
+    @event = Event.find(params[:id])
+    @event.to_json
   end
 
   get "/Users" do 
