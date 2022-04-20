@@ -39,11 +39,28 @@ class ApplicationController < Sinatra::Base
   post "/Users" do
     @login = User.find_by(username: params[:username])
     if @login == nil
-      halt 400, haml("invalid login")
+      {:status => "error", :message => "invalid login"}.to_json
     elsif @login.password == params[:password]
-       Response.headers= "success!"
+      {:status => "OK", :message => "success!"}.to_json
     else
-       Response.headers= "invalid login"
+      {:status => "error", :message => "invalid login"}.to_json
+    end
+  end
+
+  patch "/Users" do
+    @user = User.find_by(username: params[:username])
+    @event = Event.find(params[:event_id])
+    if params[:AddOrSubtractFromList] == "subtract"
+      Favorited_event.create(
+        user_id: @user.id,
+        event_id: @event.id
+      )
+      @event.guestAmounts -=1
+      @event.save
+    else
+      Favorited_event.find_by(:event_id == @event.id && :user_id == user.id).destroy
+      @event.guestAmounts +=1
+      @event.save
     end
   end
 
