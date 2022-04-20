@@ -28,8 +28,15 @@ class ApplicationController < Sinatra::Base
   get "/Events/:id" do 
     @event = Event.find(params[:id])
     @event.to_json
+
   end
 
+  post "/Favorites" do 
+    # binding.pry
+    @user = User.find_by(username: params[:user])
+    @favorite_events = Favorited_event.where(user_id: @user.id)
+    @favorite_events.map{|event| Event.find(event.event_id)}.to_json
+  end
   
 
   get "/Users" do 
