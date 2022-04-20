@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_160259) do
     t.integer "guestAmounts"
     t.integer "ageMin"
     t.integer "ageMax"
-    t.boolean "cannabis"
+    t.boolean "green"
     t.boolean "liquor"
     t.boolean "dj"
     t.integer "user_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_160259) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "username"
+    t.string "password"
   end
 
 end

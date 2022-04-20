@@ -1,17 +1,32 @@
 puts "🌱 Seeding spices..."
 User.create(
     email: Faker::Internet.email,
-    username: Faker::TvShows::AquaTeenHungerForce.character
+    username: Faker::TvShows::AquaTeenHungerForce.character,
+    password: Faker::Games::SuperSmashBros.fighter
 )
 
 User.create(
     email: Faker::Internet.email,
-    username: Faker::TvShows::AquaTeenHungerForce.character
+    username: Faker::TvShows::AquaTeenHungerForce.character,
+    password: Faker::Games::SuperSmashBros.fighter
 )
 
 User.create(
     email: Faker::Internet.email,
-    username: Faker::TvShows::AquaTeenHungerForce.character
+    username: Faker::TvShows::AquaTeenHungerForce.character,
+    password: Faker::Games::SuperSmashBros.fighter
+)
+
+User.create(
+    email: Faker::Internet.email,
+    username: "wael",
+    password: "asdf"
+)
+
+User.create(
+    email: Faker::Internet.email,
+    username: "david",
+    password: "imthinkingtoohardaboutthis"
 )
 
 Event.create(
@@ -19,7 +34,7 @@ Event.create(
     name: Faker::Marketing.buzzwords,
     description: "lets party till we die or something",
     guestAmounts: rand(10...100),
-    cannabis: true,
+    green: true,
     liquor: true,
     dj: true,
     user_id: 3,
@@ -33,7 +48,7 @@ Event.create(
     name: Faker::Marketing.buzzwords,
     description: "lets meditate :)",
     guestAmounts: rand(10...100),
-    cannabis: true,
+    green: true,
     liquor: false,
     dj: true,
     user_id: 2,
@@ -47,7 +62,7 @@ Event.create(
     name: Faker::Marketing.buzzwords,
     description: "we might die here",
     guestAmounts: rand(10...100),
-    cannabis: false,
+    green: false,
     liquor: true,
     dj: true,
     user_id: 3,
@@ -61,7 +76,7 @@ Event.create(
     name: Faker::Marketing.buzzwords,
     description: "party hardy!",
     guestAmounts: rand(10...100),
-    cannabis: true,
+    green: true,
     liquor: true,
     dj: true,
     user_id: 2,

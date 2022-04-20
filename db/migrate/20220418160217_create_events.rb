@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.date :date
       t.string :location, :img, :name, :description
       t.integer :guestAmounts, :ageMin, :ageMax
-      t.boolean :cannabis, :liquor, :dj
+      t.boolean :green, :liquor, :dj
       t.belongs_to :user
     end
   end
