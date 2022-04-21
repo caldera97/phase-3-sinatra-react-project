@@ -42,7 +42,13 @@ class ApplicationController < Sinatra::Base
       story: params[:story]
     )
   end
-
+post '/Users' do
+  User.create(
+    email: params[:email],
+    username: params[:username],
+    password: params[:password]
+  )
+end
   post "/Favorites" do 
     # binding.pry
     @user = User.find_by(username: params[:user])
