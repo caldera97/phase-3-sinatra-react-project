@@ -37,7 +37,11 @@ class ApplicationController < Sinatra::Base
     @favorite_events = Favorited_event.where(user_id: @user.id)
     @favorite_events.map{|event| Event.find(event.event_id)}.to_json
   end
-  
+
+  delete "/Events/:id" do
+    @event = Event.find(params[:id])
+    @event.destroy
+  end
 
   get "/Users" do 
     User.all.to_json
@@ -57,16 +61,17 @@ class ApplicationController < Sinatra::Base
   patch "/Users" do
     @user = User.find_by(username: params[:username])
     @event = Event.find(params[:event_id])
-    if params[:AddOrSubtractFromList] == "subtract"
-      Favorited_event.create(
+    @check = Favorited_event.find_by(:event_id == @event.id && :user_id == user.id)
+    if @check
+    @check.destroy
+      @event.guestAmounts +=1
+      @event.save
+    else
+    Favorited_event.create(
         user_id: @user.id,
         event_id: @event.id
       )
       @event.guestAmounts -=1
-      @event.save
-    else
-      Favorited_event.find_by(:event_id == @event.id && :user_id == user.id).destroy
-      @event.guestAmounts +=1
       @event.save
     end
   end

@@ -40,7 +40,8 @@ Event.create(
     user_id: 3,
     date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
     ageMin: 21,
-    ageMax: 50
+    ageMax: 50,
+    img: "https://loremflickr.com/320/240/party/?random=1"
 )
 
 Event.create(
@@ -54,7 +55,8 @@ Event.create(
     user_id: 2,
     date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
     ageMin: 19,
-    ageMax: 27
+    ageMax: 27,
+    img: "https://loremflickr.com/320/240/party/?random=1"
 )
 
 Event.create(
@@ -68,7 +70,8 @@ Event.create(
     user_id: 3,
     date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
     ageMin: 23,
-    ageMax: 37
+    ageMax: 37,
+    img: "https://loremflickr.com/320/240/party/?random=1"
 )
 
 Event.create(
@@ -82,7 +85,8 @@ Event.create(
     user_id: 2,
     date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
     ageMin: 23,
-    ageMax: 75
+    ageMax: 75,
+    img: "https://loremflickr.com/320/240/party/?random=1"
 )
 
 Comment.create(
