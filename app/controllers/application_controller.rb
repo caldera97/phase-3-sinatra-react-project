@@ -31,6 +31,18 @@ class ApplicationController < Sinatra::Base
 
   end
 
+  get "/Donate" do
+    Donate.all.to_json
+  end
+
+  post '/Donate' do
+    Donate.create(
+      name: params[:name],
+      amount: params[:amount],
+      story: params[:story]
+    )
+  end
+
   post "/Favorites" do 
     # binding.pry
     @user = User.find_by(username: params[:user])
@@ -80,4 +92,8 @@ class ApplicationController < Sinatra::Base
     Comment.all.to_json
   end
 
+end
+delete "/Events/:id" do
+  @event = Event.find(params[:id])
+  @event.delete
 end
