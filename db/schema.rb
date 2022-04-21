@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_18_160259) do
+ActiveRecord::Schema.define(version: 2022_04_21_190032) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -18,6 +18,12 @@ ActiveRecord::Schema.define(version: 2022_04_18_160259) do
     t.string "content"
     t.index ["event_id"], name: "index_comments_on_event_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "donates", force: :cascade do |t|
+    t.string "name"
+    t.integer "amount"
+    t.string "story"
   end
 
   create_table "events", force: :cascade do |t|

@@ -29,61 +29,191 @@ User.create(
     password: "imthinkingtoohardaboutthis"
 )
 
+# 20.times do
 Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=1",
     location: Faker::Address.city,
     name: Faker::Marketing.buzzwords,
-    description: "lets party till we die or something",
+    description: Faker::TvShows::RuPaul.quote,
     guestAmounts: rand(10...100),
-    green: true,
-    liquor: true,
-    dj: true,
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
     user_id: 3,
     date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
-    ageMin: 21,
-    ageMax: 50
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
 )
-
+# end
 Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=2",
     location: Faker::Address.city,
     name: Faker::Marketing.buzzwords,
-    description: "lets meditate :)",
+    description: Faker::TvShows::RuPaul.quote,
     guestAmounts: rand(10...100),
-    green: true,
-    liquor: false,
-    dj: true,
-    user_id: 2,
-    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
-    ageMin: 19,
-    ageMax: 27
-)
-
-Event.create(
-    location: Faker::Address.city,
-    name: Faker::Marketing.buzzwords,
-    description: "we might die here",
-    guestAmounts: rand(10...100),
-    green: false,
-    liquor: true,
-    dj: true,
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
     user_id: 3,
     date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
-    ageMin: 23,
-    ageMax: 37
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
 )
-
 Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=3",
     location: Faker::Address.city,
     name: Faker::Marketing.buzzwords,
-    description: "party hardy!",
+    description: Faker::TvShows::RuPaul.quote,
     guestAmounts: rand(10...100),
-    green: true,
-    liquor: true,
-    dj: true,
-    user_id: 2,
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
     date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
-    ageMin: 23,
-    ageMax: 75
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
 )
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=4",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=5",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=6",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=7",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=8",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=9",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=10",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=11",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=12",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+Event.create(
+    img:"https://loremflickr.com/320/240/houseparty/?random=13",
+    location: Faker::Address.city,
+    name: Faker::Marketing.buzzwords,
+    description: Faker::TvShows::RuPaul.quote,
+    guestAmounts: rand(10...100),
+    green: Faker::Boolean.boolean,
+    liquor: Faker::Boolean.boolean,
+    dj: Faker::Boolean.boolean,
+    user_id: 3,
+    date: Faker::Date.between(from: '2022-05-23', to: '2022-09-25'),
+    ageMin: rand(21...40),
+    ageMax: rand(40...99),
+)
+
 
 Comment.create(
     user_id: 1,
@@ -126,4 +256,11 @@ Comment.create(
     event_id: 3,
     content: "i left my phone here if anyone sees  a jitterbug with a hello kitty charm on it please give it back"
 )
+
+Donate.create(
+    name: "wael",
+    amount: 1000,
+    story: "damn"
+)
+
 puts "✅ Done seeding!"

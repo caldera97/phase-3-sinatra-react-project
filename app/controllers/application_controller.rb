@@ -28,8 +28,27 @@ class ApplicationController < Sinatra::Base
   get "/Events/:id" do 
     @event = Event.find(params[:id])
     @event.to_json
+
   end
 
+  get "/Donate" do
+    Donate.all.to_json
+  end
+
+  post '/Donate' do
+    Donate.create(
+      name: params[:name],
+      amount: params[:amount],
+      story: params[:story]
+    )
+  end
+
+  post "/Favorites" do 
+    # binding.pry
+    @user = User.find_by(username: params[:user])
+    @favorite_events = Favorited_event.where(user_id: @user.id)
+    @favorite_events.map{|event| Event.find(event.event_id)}.to_json
+  end
   
 
   get "/Users" do 
@@ -39,11 +58,28 @@ class ApplicationController < Sinatra::Base
   post "/Users" do
     @login = User.find_by(username: params[:username])
     if @login == nil
-      halt 400, haml("invalid login")
+      {:status => "error", :message => "invalid login"}.to_json
     elsif @login.password == params[:password]
-       Response.headers= "success!"
+      {:status => "OK", :message => "success!"}.to_json
     else
-       Response.headers= "invalid login"
+      {:status => "error", :message => "invalid login"}.to_json
+    end
+  end
+
+  patch "/Users" do
+    @user = User.find_by(username: params[:username])
+    @event = Event.find(params[:event_id])
+    if params[:AddOrSubtractFromList] == "subtract"
+      Favorited_event.create(
+        user_id: @user.id,
+        event_id: @event.id
+      )
+      @event.guestAmounts -=1
+      @event.save
+    else
+      Favorited_event.find_by(:event_id == @event.id && :user_id == user.id).destroy
+      @event.guestAmounts +=1
+      @event.save
     end
   end
 
@@ -51,4 +87,8 @@ class ApplicationController < Sinatra::Base
     Comment.all.to_json
   end
 
+end
+delete "/Events/:id" do
+  @event = Event.find(params[:id])
+  @event.delete
 end
