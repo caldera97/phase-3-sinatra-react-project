@@ -53,6 +53,11 @@ class ApplicationController < Sinatra::Base
       story: params[:story]
     )
   end
+
+  get '/Donate' do 
+    Donate.all.to_json
+  end
+
 post '/Users' do
   User.create(
     email: params[:email],
@@ -60,6 +65,7 @@ post '/Users' do
     password: params[:password]
   )
 end
+
   post "/Favorites" do 
     # binding.pry
     @user = User.find_by(username: params[:user])
@@ -71,7 +77,7 @@ end
     User.all.to_json
   end
 
-  post "/Users" do
+  patch "/Users" do
     @login = User.find_by(username: params[:username])
     if @login == nil
       {:status => "error", :message => "invalid login"}.to_json
