@@ -77,6 +77,17 @@ end
     User.all.to_json
   end
 
+  post "/checkFav" do
+    @user = User.find_by(username: params[:username])
+    @event = Event.find(params[:event_id])
+    @check = Favorited_event.find_by(event_id: @event.id, user_id: @user.id)
+    if @check
+      {:status => "OK", :message => "is favorited"}.to_json
+    else
+      {:status => "error", :message => "not yet favorited"}.to_json
+    end
+  end
+
   patch "/Users" do
     @login = User.find_by(username: params[:username])
     if @login == nil
