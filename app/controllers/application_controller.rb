@@ -88,7 +88,7 @@ end
     end
   end
 
-  patch "/Users" do
+  put "/Users" do
     @user = User.find_by(username: params[:username])
     @event = Event.find(params[:event_id])
     @check = Favorited_event.find_by(event_id: @event.id, user_id: @user.id)
