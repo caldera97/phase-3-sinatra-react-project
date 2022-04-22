@@ -260,7 +260,13 @@ Comment.create(
 Donate.create(
     name: "wael",
     amount: 1000,
-    story: "damn"
+    story: "a fundraiser for the homeless miami residents",
+)
+    
+Donate.create(
+    name: "david",
+    amount: 20,
+    story: "i want some mcnuggets :(",
 )
 
 puts "✅ Done seeding!"
